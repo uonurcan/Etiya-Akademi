@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS public.categories
 
 CREATE TABLE IF NOT EXISTS public.cities
 (
-    id integer NOT NULL,
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
     name character varying(50) COLLATE pg_catalog."default" NOT NULL,
     country_id integer NOT NULL,
     CONSTRAINT cities_pkey PRIMARY KEY (id)
@@ -190,10 +190,10 @@ CREATE TABLE IF NOT EXISTS public.products
 (
     id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     name character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    unit_price money NOT NULL,
     stock integer NOT NULL,
     description character varying(255) COLLATE pg_catalog."default" NOT NULL,
     image_url character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    unit_price integer NOT NULL,
     CONSTRAINT products_pkey PRIMARY KEY (id)
 );
 
