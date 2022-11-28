@@ -1,33 +1,33 @@
 ### Insert Into
-![](images/insertIntoBefore.PNG)
+![](images/insertIntoBefore.png)
 ```sh
 Insert Into users 
 Values
 (DEFAULT, 'xyzticaret@gmail.com', '54321')
 ```
-![](images/insertIntoOutput.PNG)
+![](images/insertIntoOutput.png)
 ### Update
-![](images/updateSetBefore.PNG)
+![](images/updateSetBefore.png)
 ```sh
 Update products 
 Set unit_price=12000 
 Where id=4
 ```
-![](images/updateSetOutput.PNG)
+![](images/updateSetOutput.png)
 ### Delete
-![](images/deleteBefore.PNG)
+![](images/deleteBefore.png)
 ```sh
 Delete from payment_types 
 where id = 4
 ```
-![](images/deleteOutput.PNG)
+![](images/deleteOutput.png)
 ### Between
 ```sh
 Select name, unit_price
 From products
 Where unit_price between 100 and 200
 ```
-![](images/betweenOutput.PNG)
+![](images/betweenOutput.png)
 ### In
 ```sh
 select ci.name as "Şehir", ic.first_name, ic.last_name
@@ -48,7 +48,7 @@ inner join cities ci
 on t.city_id = ci.id
 where ci.name in ('Ankara', 'İzmir')
 ```
-![](images/inOutput.PNG)
+![](images/inOutput.png)
 ### Group By & Having
 ```sh
 Select ci.name as "Şehir", count(*) "Müşteri Sayısı"
@@ -67,7 +67,7 @@ inner join customers cu
 on us.id = cu.id
 group by ci.name having count (*) > 2
 ```
-![](images/groupByHavingOutput.PNG)
+![](images/groupByHavingOutput.png)
 ### Inner Join
 ```sh
 Select ic.first_name, ic.last_name, us.email
@@ -75,7 +75,7 @@ From individual_customers ic
 inner join users us
 on ic.id = us.id
 ```
-![](images/innerJoinOutput.PNG)
+![](images/innerJoinOutput.png)
 ### Left Join 
 ```sh
 Select ic.first_name as "Bireysel Müşteri Adı", ic.last_name as "Bireysel Müşteri Soyadı",
@@ -89,7 +89,7 @@ on cc.id = us.id
 left join sellers se
 on se.id = us.id
 ```
-![](images/leftJoinOutput.PNG)
+![](images/leftJoinOutput.png)
 ### Right Join
 ```sh
 Select ci.name, tow.name, di.name, st.name, ad.address
@@ -103,7 +103,7 @@ on di.town_id = tow.id
 right join cities ci
 on tow.city_id = ci.id
 ```
-![](images/rightJoinOutput.PNG)
+![](images/rightJoinOutput.png)
 ### Full Outer Join
 ```sh
 Select pr.name, pr.unit_price, bi.quantity, ba.total_price 
@@ -113,4 +113,4 @@ on bi.basket_id = ba.id
 full outer join products pr
 on bi.product_id = pr.id
 ```
-![](images/fullOuterJoinOutput.PNG)
+![](images/fullOuterJoinOutput.png)
